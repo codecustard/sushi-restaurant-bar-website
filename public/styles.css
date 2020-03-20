@@ -1,0 +1,256 @@
+* { box-sizing: border-box; }
+
+body {
+  width: 100%;
+  margin: 0;
+}
+h2 {
+  font-size: 30px;
+}
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+ol li:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.grid-item {
+  text-align: left;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.grid-hero {
+  color: white;
+  grid-area: hero;
+  background-image: url('./images/sushi-on-board.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  
+  text-align: center;
+}
+.grid-hero h1 {
+  padding-top: 70px;
+}
+
+.grid-header {
+  grid-area: header;
+  padding-left: 6%;
+}
+
+.grid-nav {
+  grid-area: menu;
+  text-align: right;
+  padding-right: 6%;
+}
+
+.grid-main {
+  color: #282c2f;
+  /* background-image: url("images/sushi-closeup.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  grid-area: main;
+  padding-top: 12%;
+  padding-bottom: 15%;
+  text-align: right;
+}
+
+.grid-right {
+  color: #282c2f;
+  grid-area: right;
+  font-style: italic;
+  font-size: 20px;
+  padding-top: 16%;
+  padding-bottom: 15%;
+}
+.grid-right p {
+  text-align: left;
+}
+
+.grid-item-reservation {
+  color: #282c2f;
+  font-style: normal;
+  padding-top: 12%;
+  padding-bottom: 15%;
+  text-align: center;
+}
+
+.grid-item-reservation p {
+  text-align: center;
+}
+
+.grid-menu {
+  text-align: left;
+  font-style: italic;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16%;
+  padding-bottom: 15%;
+}
+
+.grid-table {
+  /* background-image: url("images/close-up-photo-of-dinnerware-set-on-top-of-table-with-glass-1395967.jpg");
+  background-size: cover; */
+}
+
+#reservation-bg {
+  background-image: url("images/close-up-photo-of-dinnerware-set-on-top-of-table-with-glass-1395967.jpg");
+  background-size: cover;
+}
+
+.grid-footer {
+  grid-area: footer;
+  background-image: url('./images/sushi-on-board.png');
+  background-repeat: no-repeat;
+  background-position-y: -390px;
+  background-size: cover;
+}
+
+.grid-header-container {
+  background-color: black;
+  color: white;
+  display: grid;
+  padding: 30px;
+  grid-template-areas:
+  'header header header header header menu'
+}
+
+.grid-container {
+    display: grid;
+
+    grid-template-areas:
+    'hero hero hero hero hero hero'
+    'main main main right right right'
+    'footer footer footer footer footer footer';
+}
+
+.grid-container-contact {
+  display: grid;
+
+  grid-template-areas:
+  'hero hero hero hero hero hero'
+  'main right right right right right'
+  'footer footer footer footer footer footer';
+}
+
+/* Header */
+header {
+  background-color: black;
+  color: white;
+}
+
+#home-hero {
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  padding-top: 13px;
+  /* margin-left: 100px; */
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: orangered;
+}
+
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  display: inline;
+  font-size: 1.5rem;
+  padding-inline-start: 10px;
+}
+
+#contact-form {
+  text-align: left;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  font-style: normal;
+  padding-right: 20%;
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  padding: 30px;
+}
+footer p{
+  text-align: center;
+  font-size: 75%;
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .grid-container, .grid-container-contact {
+
+    grid-template-areas:
+    'hero hero hero hero hero hero'
+    'main main main main main main'
+    'right right right right right right'
+    'footer footer footer footer footer footer';
+  }
+
+  .grid-right {
+    padding-top: 5%;
+  }
+
+  .grid-right p {
+    text-align: center;
+  }
+
+  .grid-main {
+    text-align: center;
+    padding-bottom: 5%;
+  }
+
+  nav li {
+    display: block;
+  }
+
+  ol li {
+    text-align: center;
+  }
+
+  .grid-menu {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #reservation-bg {
+    padding-bottom: 25%;
+  }
+}
+
+@media (max-width: 375px) {
+  .grid-main {
+    font-size: 20px;
+  }
+
+  .grid-right {
+    font-size: 16px;
+  }
+
+  .grid-menu {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #reservation-bg {
+    padding-bottom: 50%;
+  }
+}
